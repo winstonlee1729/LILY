@@ -1,0 +1,1 @@
+This repository solves 2D steady state convection-diffusion without source problem with FVM. The discretization scheme for convection is Upwind Differencing while that for diffusion is Central Differencing.
