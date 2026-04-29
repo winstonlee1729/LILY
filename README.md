@@ -4,8 +4,8 @@ A custom Computational Fluid Dynamics (CFD) solver based on the Finite Volume Me
 
 ## Features
 
-* **Advanced Algorithms:** Implements robust pressure-velocity coupling algorithms including PISO, PIMPLE, and SIMPLE for both steady-state and highly transient flows.
-* **High-Resolution Schemes:** Utilizes the QUICK scheme for accurate convection modeling with built-in boundary fallbacks.
+* **Advanced Algorithms:** Implements robust pressure-velocity coupling algorithms including SIMPLE, SIMPLEC, SIMPLER, and PISO for both steady-state and transient flows.
+* **High-Resolution Schemes:** Utilizes the First-order Upwind, QUICK, Power Law, Hybrid, and TVD schemes for accurate convection modeling with built-in boundary fallbacks.
 * **Multiphase & Non-Newtonian Capabilities:** Supports Volume of Fluid (VOF) phase tracking and Carreau viscosity models for complex physics like blood flow and Rayleigh-Taylor instabilities.
 * **Parallelized Computation:** Fully optimized with OpenMP to leverage multi-core processors for fast matrix assembly and solving.
 * **Standardized Output:** Generates VTK (`.vtk`) files for seamless 2D flow field visualization.
@@ -28,4 +28,6 @@ Open your terminal or command prompt and compile the `.f90` source file. Be sure
 
 **Using GNU Fortran (`gfortran`):**
 ```bash
-gfortran -fopenmp -O3 solver.f90 -o lily
+gfortran -fopenmp -O3 solver.f90 -o solver.exe
+export OMP_NUM_THREADS=#Threads for running
+./solver.exe
