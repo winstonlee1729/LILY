@@ -15,7 +15,7 @@ A custom Computational Fluid Dynamics (CFD) solver based on the Finite Volume Me
 ## Prerequisites
 
 To compile and visualize the results from this solver, you will need:
-1. A Fortran compiler that supports OpenMP (e.g., `gfortran`, Intel `ifort`, or `ifx`).
+1. A Fortran compiler that supports OpenMP (e.g., `gfortran`, Intel  `ifx`).
 2. [ParaView](https://www.paraview.org/) (for post-processing and visualization).
 3. MATLAB and Python to run plot files.
 
@@ -23,11 +23,22 @@ To compile and visualize the results from this solver, you will need:
 
 ## Compilation & Execution
 
-### 1. Compiling the Code
 Open your terminal or command prompt and compile the `.f90` source file. Be sure to enable OpenMP and optimization flags for maximum performance.
 
 **Using GNU Fortran (`gfortran`):**
 ```bash
 gfortran -fopenmp -O3 solver.f90 -o solver.exe
-export OMP_NUM_THREADS=#Threads for running
+export OMP_NUM_THREADS=8    # Number of threads for running
 ./solver.exe
+```
+
+**Using Intel Fortran Compiler (`ifx`):**
+```bash
+ifx  -O3 -qopenmp solver.f90 -o solver.exe
+export OMP_NUM_THREADS=8    # Number of threads for running
+./solver.exe
+```
+
+
+
+
