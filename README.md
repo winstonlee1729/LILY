@@ -27,14 +27,14 @@ Open your terminal or command prompt and compile the `.f90` source file. Be sure
 
 **Using GNU Fortran (`gfortran`):**
 ```bash
-gfortran -fopenmp -O3 solver.f90 -o solver.exe
+gfortran -fopenmp solver.f90 -o solver.exe
 export OMP_NUM_THREADS=8    # Number of threads for running
 ./solver.exe
 ```
 
 **Using Intel Fortran Compiler (`ifx`):**
 ```bash
-ifx  -O3 -qopenmp solver.f90 -o solver.exe
+ifx -qopenmp solver.f90 -o solver.exe
 export OMP_NUM_THREADS=8    # Number of threads for running
 ./solver.exe
 ```
